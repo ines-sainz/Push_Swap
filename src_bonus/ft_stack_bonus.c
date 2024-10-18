@@ -10,21 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "ft_push_swap_bonus.h"
 
 void	ft_lstclear(t_list *list)
 {
 	t_stack	*temp;
 
-	list->iterator = list->first_node_a;
-	while (list->iterator != NULL)
+	if (list->first_node_a != NULL)
 	{
-		temp = list->iterator;
-		list->iterator = list->iterator->next;
-		free(temp);
+		list->iterator = list->first_node_a;
+		while (list->iterator != NULL)
+		{
+			temp = list->iterator;
+			list->iterator = list->iterator->next;
+			free(temp);
+		}
+		temp = NULL;
+		list->first_node_a = NULL;
 	}
-	temp = NULL;
-	list->first_node_a = NULL;
+	if (list->first_node_b != NULL)
+	{
+		list->iterator = list->first_node_b;
+		while (list->iterator != NULL)
+		{
+			temp = list->iterator;
+			list->iterator = list->iterator->next;
+			free(temp);
+		}
+		temp = NULL;
+	}
 }
 
 int	ft_lstadd_back(t_list *list, t_stack *temp)

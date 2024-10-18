@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "ft_push_swap_bonus.h"
 #include <limits.h>
 
 int	ft_char_to_int(char *temp)
