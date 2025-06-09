@@ -12,6 +12,15 @@
 
 #include "ft_push_swap.h"
 
+/**
+ * @brief Sorts the stack in the list using the push_swap algorithm.
+ *
+ * Determines if sorting is necessary and chooses between a small or full sort
+ * based on the number of elements. Uses indexing to prepare for sorting.
+ *
+ * @param list Pointer to the list structure containing the stack.
+ * @return 0 on success, 1 on error.
+ */
 int	ft_push_swap(t_list *list)
 {
 	if (!list->first_node_a)
