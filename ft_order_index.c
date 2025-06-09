@@ -12,6 +12,14 @@
 
 #include "ft_push_swap.h"
 
+/**
+ * @brief Checks if the stack in the list is not ordered in ascending order.
+ *
+ * Iterates over the stack and compares adjacent elements to detect disorder.
+ *
+ * @param list Pointer to the list structure.
+ * @return 1 if the stack is not ordered, 0 if it is ordered.
+ */
 int	ft_ordered_list(t_list *list)
 {
 	list->iterator = list->first_node_a;
@@ -24,6 +32,15 @@ int	ft_ordered_list(t_list *list)
 	return (0);
 }
 
+/**
+ * @brief Assigns an index to each node based on its relative value.
+ *
+ * Each node gets an index representing how many other nodes have a smaller
+ * value.
+ *
+ * @param list Pointer to the list structure.
+ * @return Always returns 0.
+ */
 int	ft_write_index(t_list *list)
 {
 	int		down;
