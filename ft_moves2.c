@@ -11,8 +11,14 @@
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-#include <unistd.h>
 
+/**
+ * @brief Writes the rotate-reverse operation to standard output.
+ *
+ * Prints "rra" or "rrb" followed by a newline based on the given character.
+ *
+ * @param c Character representing the target stack ('a' or 'b').
+ */
 void	ft_write(char c)
 {
 	if (c == 'a' || c == 'b')
@@ -23,6 +29,17 @@ void	ft_write(char c)
 	}
 }
 
+/**
+ * @brief Performs a reverse rotate on the given stack.
+ *
+ * Moves the last element to the front of the stack and writes the
+ * operation name if 'a' or 'b' is passed.
+ *
+ * @param list Pointer to the list structure containing iterators.
+ * @param first_node Pointer to the stack to operate on.
+ * @param c Character indicating which stack is rotated ('a' or 'b').
+ * @return 0 on success, 1 if the stack has fewer than 2 elements.
+ */
 int	ft_rrab(t_list *list, t_stack **first_node, char c)
 {
 	t_stack	*temp;
@@ -52,6 +69,14 @@ int	ft_rrab(t_list *list, t_stack **first_node, char c)
 	return (0);
 }
 
+/**
+ * @brief Performs a reverse rotate on both stack A and B simultaneously.
+ *
+ * Applies reverse rotate to both stacks without printing rra/rrb individually.
+ *
+ * @param list Pointer to the list structure containing both stacks.
+ * @return 0 on success, 1 if both stacks can't be rotated.
+ */
 int	ft_rrr(t_list *list)
 {
 	if (ft_rrab(list, &list->first_node_a, 'x') == 1
