@@ -12,6 +12,13 @@
 
 #include "ft_push_swap_bonus.h"
 
+/**
+ * @brief Frees all nodes in both stacks of the given list.
+ *
+ * Iterates through stack A and B, freeing each node and resetting pointers.
+ *
+ * @param list The list structure containing both stacks.
+ */
 void	ft_lstclear(t_list *list)
 {
 	t_stack	*temp;
@@ -41,6 +48,15 @@ void	ft_lstclear(t_list *list)
 	}
 }
 
+/**
+ * @brief Adds a new node to the end of stack A if not duplicated.
+ *
+ * If the list is empty, sets the new node as the first. Prevents duplicates.
+ *
+ * @param list The list structure containing stack A.
+ * @param temp The node to add.
+ * @return int Returns 0 on success, 1 if duplicate found.
+ */
 int	ft_lstadd_back(t_list *list, t_stack *temp)
 {
 	if (list->first_node_a == NULL)
@@ -61,6 +77,14 @@ int	ft_lstadd_back(t_list *list, t_stack *temp)
 	return (0);
 }
 
+/**
+ * @brief Allocates and initializes a new stack node.
+ *
+ * Sets the node's content and initializes next to NULL.
+ *
+ * @param content The integer value to store in the node.
+ * @return t_stack* Pointer to the new node, or NULL on allocation failure.
+ */
 t_stack	*ft_lstnew(int content)
 {
 	t_stack	*element;
@@ -73,6 +97,15 @@ t_stack	*ft_lstnew(int content)
 	return (element);
 }
 
+/**
+ * @brief Creates and adds a new number node to stack A.
+ *
+ * Allocates a new node and adds it to stack A, clearing list on failure.
+ *
+ * @param number The number to add to the stack.
+ * @param list The list to add the number to.
+ * @return int 0 on success, 1 on failure.
+ */
 int	ft_create_stack(int number, t_list *list)
 {
 	t_stack	*temp;
