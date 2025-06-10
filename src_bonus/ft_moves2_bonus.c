@@ -11,8 +11,17 @@
 /* ************************************************************************** */
 
 #include "ft_push_swap_bonus.h"
-#include <unistd.h>
 
+/**
+ * @brief Performs a reverse rotate operation on a given stack.
+ *
+ * Moves the last element of the stack to the top (reverse rotate).
+ *
+ * @param list Pointer to the list containing the stack.
+ * @param first_node Pointer to the head of the stack to rotate.
+ * @param c Stack identifier ('a' or 'b'), unused here.
+ * @return 0 on success, 1 if the stack is empty or has only one element.
+ */
 int	ft_rrab(t_list *list, t_stack **first_node, char c)
 {
 	t_stack	*temp;
@@ -42,6 +51,14 @@ int	ft_rrab(t_list *list, t_stack **first_node, char c)
 	return (0);
 }
 
+/**
+ * @brief Performs reverse rotate on both stacks simultaneously.
+ *
+ * Calls ft_rrab on both stack A and stack B.
+ *
+ * @param list Pointer to the list containing both stacks.
+ * @return 0 on success, 1 if both operations failed.
+ */
 int	ft_rrr(t_list *list)
 {
 	if (ft_rrab(list, &list->first_node_a, 'x') == 1
