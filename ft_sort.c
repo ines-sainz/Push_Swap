@@ -12,6 +12,15 @@
 
 #include "ft_push_swap.h"
 
+/**
+ * @brief Counts how many rotations are needed to bring an index to the top.
+ *
+ * Iterates through stack B to find the node with the specified index.
+ *
+ * @param list Pointer to the list structure containing stack B.
+ * @param index The index to search for in stack B.
+ * @return The number of steps needed to reach the index.
+ */
 int	ft_count_rb(t_list *list, int index)
 {
 	int	i;
@@ -26,6 +35,15 @@ int	ft_count_rb(t_list *list, int index)
 	return (i);
 }
 
+/**
+ * @brief Performs the second part of the K-sort algorithm.
+ *
+ * Chooses between rotating up or reverse rotating down to bring the
+ * correct element to the top of stack B before pushing it to stack A.
+ *
+ * @param list Pointer to the list structure with both stacks.
+ * @return 0 on success.
+ */
 int	ft_k_sort2(t_list *list)
 {
 	int	num_rb;
@@ -55,6 +73,15 @@ int	ft_k_sort2(t_list *list)
 	return (0);
 }
 
+/**
+ * @brief Calculates an approximate square root of a number.
+ *
+ * Returns the floor of the square root or a slightly higher estimate
+ * depending on closeness.
+ *
+ * @param number The input number.
+ * @return An integer approximation of the square root.
+ */
 int	ft_sqrt(int number)
 {
 	int	i;
@@ -72,6 +99,15 @@ int	ft_sqrt(int number)
 	return (i - 1);
 }
 
+/**
+ * @brief Performs the first part of the K-sort algorithm.
+ *
+ * Pushes and rotates elements from stack A to B in chunks determined by
+ * square root logic.
+ *
+ * @param list Pointer to the list structure with both stacks.
+ * @return 0 on success.
+ */
 int	ft_k_sort1(t_list *list)
 {
 	int	k;
@@ -100,6 +136,14 @@ int	ft_k_sort1(t_list *list)
 	return (0);
 }
 
+/**
+ * @brief Sorts the stack using the full K-sort strategy.
+ *
+ * Calls ft_k_sort1 and ft_k_sort2 in sequence.
+ *
+ * @param list Pointer to the list structure with both stacks.
+ * @return 0 on success.
+ */
 int	ft_sort(t_list *list)
 {
 	ft_k_sort1(list);
