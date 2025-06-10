@@ -12,12 +12,26 @@
 
 #include "ft_push_swap_bonus.h"
 
+/**
+ * @brief Prints an error message to standard error.
+ *
+ * Writes "Error\n" to file descriptor 2 and returns error status.
+ *
+ * @return int Always returns 1.
+ */
 int	ft_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	return (1);
 }
 
+/**
+ * @brief Initializes the t_list structure with default values.
+ *
+ * Sets stack pointers to NULL and resets number count to 0.
+ *
+ * @param list Pointer to the list structure to initialize.
+ */
 void	inicialize_structure(t_list *list)
 {
 	list->first_node_a = NULL;
@@ -25,6 +39,16 @@ void	inicialize_structure(t_list *list)
 	list->n_numbers = 0;
 }
 
+/**
+ * @brief Entry point of the push_swap checker program.
+ *
+ * Initializes the stack, parses and processes arguments, executes
+ * commands from input, and prints "OK", "KO", or "Error".
+ *
+ * @param argc Argument count.
+ * @param argv Argument vector.
+ * @return int 0 on success, 1 on input or processing error.
+ */
 int	main(int argc, char **argv)
 {
 	t_list	list;
