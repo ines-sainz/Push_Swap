@@ -16,7 +16,7 @@ int	check_if_move(char *buffer)
 {
 	int	len;
 
-	len = ft_strlen2(buffer);
+	len = ft_strlen(buffer);
 	if ((ft_strncmp(buffer, "sa\n", len) == 0 && len == 3)
 		|| (ft_strncmp(buffer, "sb\n", len) == 0 && len == 3))
 		return (0);
@@ -45,7 +45,7 @@ void	make_move(char *buffer, t_list *list)
 {
 	int	len;
 
-	len = ft_strlen2(buffer);
+	len = ft_strlen(buffer);
 	if (ft_strncmp(buffer, "sa\n", len) == 0 && len == 3)
 		ft_sab(list->first_node_a, 'a');
 	else if (ft_strncmp(buffer, "sb\n", len) == 0 && len == 3)

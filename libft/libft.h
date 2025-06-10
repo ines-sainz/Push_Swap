@@ -6,7 +6,7 @@
 /*   By: isainz-r <isainz-r@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 08:46:54 by isainz-r          #+#    #+#             */
-/*   Updated: 2024/03/20 09:26:02 by isainz-r         ###   ########.fr       */
+/*   Updated: 2024/02/03 11:20:01 by isainz-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
+# include <stdint.h>
+# include <ctype.h>
+# include <limits.h>
+# include <unistd.h>
+# include <fcntl.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

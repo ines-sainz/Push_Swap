@@ -43,8 +43,6 @@ int		ft_create_stack(int number, t_list *list);
 t_stack	*ft_lstnew(int content);
 int		ft_lstadd_back(t_list *list, t_stack *temp);
 void	ft_lstclear(t_list *list);
-size_t	ft_strlen2(const char *s);
-char	*ft_strjoin2(char const *s1, char const s2);
 int		ft_push_swap(t_list *list);
 int		ft_sab(t_stack *first_node, char c);
 int		ft_ss(t_list *list);

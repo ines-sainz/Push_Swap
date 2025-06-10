@@ -21,7 +21,6 @@ SRCS		= main.c \
 			  ft_stack.c \
 			  ft_moves.c \
 			  ft_moves2.c \
-			  ft_libft2.c \
 			  ft_small_ordenate.c \
 			  ft_order_index.c \
 			  ft_push_swap.c \
@@ -32,7 +31,6 @@ SRCS_BONUS	= src_bonus/main_bonus.c \
 			  src_bonus/ft_stack_bonus.c \
 			  src_bonus/ft_moves_bonus.c \
 			  src_bonus/ft_moves2_bonus.c \
-			  src_bonus/ft_libft2_bonus.c \
 			  src_bonus/ft_order_index_bonus.c \
 			  src_bonus/ft_push_swap_bonus.c
 

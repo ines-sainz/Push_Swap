@@ -80,7 +80,7 @@ char	*ft_add_char(char *temp, char c, char next_c)
 	if (((c == '+' || c == '-') && ft_isdigit(next_c) == 0)
 		|| (ft_isdigit(c) == 1 && (next_c == '+' || next_c == '-')))
 		return (free(temp), NULL);
-	len_temp = ft_strlen2(temp);
+	len_temp = ft_strlen(temp);
 	number = ft_calloc(len_temp + 2, 1);
 	if (!number)
 		return (free(temp), NULL);
