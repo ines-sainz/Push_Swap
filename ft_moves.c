@@ -11,8 +11,16 @@
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-#include <unistd.h>
 
+/**
+ * @brief Swaps the first two elements of the stack.
+ *
+ * Writes "sa" or "sb" if a valid character is passed.
+ *
+ * @param first_node Pointer to the first node of the stack.
+ * @param c Character representing the stack ('a' or 'b').
+ * @return 0 on success, 1 if the stack has fewer than 2 elements.
+ */
 int	ft_sab(t_stack *first_node, char c)
 {
 	int	temp_num;
@@ -31,6 +39,14 @@ int	ft_sab(t_stack *first_node, char c)
 	return (0);
 }
 
+/**
+ * @brief Swaps the first two elements of both stacks simultaneously.
+ *
+ * Writes "ss" if at least one stack was swapped.
+ *
+ * @param list Pointer to the list structure containing both stacks.
+ * @return 0 on success, 1 if both stacks have fewer than 2 elements.
+ */
 int	ft_ss(t_list *list)
 {
 	if ((ft_sab(list->first_node_a, 'x') == 1)
@@ -41,6 +57,16 @@ int	ft_ss(t_list *list)
 	return (0);
 }
 
+/**
+ * @brief Pushes the top element from one stack to another.
+ *
+ * Writes "pa" or "pb" depending on the character passed.
+ *
+ * @param to_move Stack to pop the element from.
+ * @param to_put Stack to push the element to.
+ * @param c Character representing the destination stack ('a' or 'b').
+ * @return 0 on success, 1 if the source stack is empty.
+ */
 int	ft_pab(t_stack **to_move, t_stack **to_put, char c)
 {
 	t_stack	*temp;
@@ -67,6 +93,16 @@ int	ft_pab(t_stack **to_move, t_stack **to_put, char c)
 	return (0);
 }
 
+/**
+ * @brief Rotates the stack upwards by one.
+ *
+ * Moves the first element to the end of the stack and writes "ra"/"rb".
+ *
+ * @param list Pointer to the list structure.
+ * @param first_node Pointer to the stack to rotate.
+ * @param c Character representing the stack ('a' or 'b').
+ * @return 0 on success, 1 if the stack has fewer than 2 elements.
+ */
 int	ft_rab(t_list *list, t_stack **first_node, char c)
 {
 	t_stack	*temp;
@@ -89,6 +125,14 @@ int	ft_rab(t_list *list, t_stack **first_node, char c)
 	return (0);
 }
 
+/**
+ * @brief Rotates both stacks upwards by one simultaneously.
+ *
+ * Writes "rr" to indicate the dual rotation operation.
+ *
+ * @param list Pointer to the list structure containing both stacks.
+ * @return 0 on success, 1 if both stacks have fewer than 2 elements.
+ */
 int	ft_rr(t_list *list)
 {
 	if ((ft_rab(list, &list->first_node_a, 'x') == 1)
