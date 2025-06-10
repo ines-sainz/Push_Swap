@@ -11,8 +11,14 @@
 /* ************************************************************************** */
 
 #include "ft_push_swap_bonus.h"
-#include <unistd.h>
 
+/**
+ * @brief Swaps the first two elements of a stack.
+ *
+ * @param first_node Pointer to the head of the stack.
+ * @param c Stack identifier (unused).
+ * @return 0 on success, 1 if the stack is empty or has one element.
+ */
 int	ft_sab(t_stack *first_node, char c)
 {
 	int	temp_num;
@@ -26,6 +32,12 @@ int	ft_sab(t_stack *first_node, char c)
 	return (0);
 }
 
+/**
+ * @brief Swaps the first two elements of both stacks A and B.
+ *
+ * @param list Pointer to the list containing both stacks.
+ * @return 0 on success, 1 if both stacks have fewer than two elements.
+ */
 int	ft_ss(t_list *list)
 {
 	if ((ft_sab(list->first_node_a, 'x') == 1)
@@ -34,6 +46,14 @@ int	ft_ss(t_list *list)
 	return (0);
 }
 
+/**
+ * @brief Pushes the top element from one stack to another.
+ *
+ * @param to_move Pointer to the source stack.
+ * @param to_put Pointer to the destination stack.
+ * @param c Stack identifier (unused).
+ * @return 0 on success, 1 if the source stack is empty.
+ */
 int	ft_pab(t_stack **to_move, t_stack **to_put, char c)
 {
 	t_stack	*temp;
@@ -58,6 +78,14 @@ int	ft_pab(t_stack **to_move, t_stack **to_put, char c)
 	return (0);
 }
 
+/**
+ * @brief Rotates a stack upwards (first element becomes last).
+ *
+ * @param list Pointer to the list containing the stack.
+ * @param first_node Pointer to the head of the stack to rotate.
+ * @param c Stack identifier (unused).
+ * @return 0 on success, 1 if the stack is empty or has one element.
+ */
 int	ft_rab(t_list *list, t_stack **first_node, char c)
 {
 	t_stack	*temp;
@@ -75,6 +103,12 @@ int	ft_rab(t_list *list, t_stack **first_node, char c)
 	return (0);
 }
 
+/**
+ * @brief Rotates both stacks A and B upwards.
+ *
+ * @param list Pointer to the list containing both stacks.
+ * @return 0 on success, 1 if both stacks cannot be rotated.
+ */
 int	ft_rr(t_list *list)
 {
 	if ((ft_rab(list, &list->first_node_a, 'x') == 1)
