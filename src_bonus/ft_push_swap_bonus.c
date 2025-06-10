@@ -12,6 +12,14 @@
 
 #include "ft_push_swap_bonus.h"
 
+/**
+ * @brief Checks if the input string is a valid move command.
+ *
+ * Validates the command in `buffer` against known push_swap operations.
+ *
+ * @param buffer The input string to validate (e.g., "sa\n", "rrr\n").
+ * @return int Returns 0 if valid move, 1 if invalid.
+ */
 int	check_if_move(char *buffer)
 {
 	int	len;
@@ -41,6 +49,15 @@ int	check_if_move(char *buffer)
 	return (1);
 }
 
+/**
+ * @brief Executes a stack operation based on the command in buffer.
+ *
+ * Maps the input move string to the corresponding stack manipulation
+ * function (e.g., swap, push, rotate, reverse rotate).
+ *
+ * @param buffer The command string (e.g., "pb\n", "rr\n").
+ * @param list The list structure holding both stacks.
+ */
 void	make_move(char *buffer, t_list *list)
 {
 	int	len;
@@ -70,6 +87,15 @@ void	make_move(char *buffer, t_list *list)
 		ft_rrr(list);
 }
 
+/**
+ * @brief Main function to execute moves for the push_swap checker.
+ *
+ * Reads commands from standard input and applies them to the stack.
+ * Verifies input validity and checks final list order.
+ *
+ * @param list The list structure holding the two stacks.
+ * @return int 0 if list is sorted and valid, 1 on error, 2 if unsorted.
+ */
 int	ft_push_swap(t_list *list)
 {
 	int		n_bytes;
