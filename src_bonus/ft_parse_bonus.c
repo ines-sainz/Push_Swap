@@ -11,8 +11,16 @@
 /* ************************************************************************** */
 
 #include "ft_push_swap_bonus.h"
-#include <limits.h>
 
+/**
+ * @brief Converts a numeric string to an integer with overflow check.
+ *
+ * Handles optional '+' or '-' sign, parses digits, and checks for overflow
+ * against INT_MAX and INT_MIN.
+ *
+ * @param temp The input string to convert.
+ * @return int The converted integer, or 1 on overflow.
+ */
 int	ft_char_to_int(char *temp)
 {
 	long	nb;
@@ -41,6 +49,18 @@ int	ft_char_to_int(char *temp)
 	return (nb);
 }
 
+/**
+ * @brief Converts a string to an integer and stores it in the stack.
+ *
+ * Validates the string format and its numeric length. Uses ft_char_to_int
+ * to convert and stores the number in the list with ft_create_stack.
+ *
+ * @param temp  The numeric string.
+ * @param list  The list to store the number in.
+ * @param i     Unused index parameter (typically 0).
+ * @param count Unused count parameter (typically 0).
+ * @return int  0 on success, 1 on error.
+ */
 int	ft_int_to_stack(char *temp, t_list *list, size_t i, size_t count)
 {
 	int		num;
@@ -70,6 +90,17 @@ int	ft_int_to_stack(char *temp, t_list *list, size_t i, size_t count)
 	return (0);
 }
 
+/**
+ * @brief Appends a character to a dynamic string, validating sign placement.
+ *
+ * Validates sign position and reallocates a new string with the character
+ * appended.
+ *
+ * @param temp     The original string to append to.
+ * @param c        The character to append.
+ * @param next_c   The character that follows `c` in the source string.
+ * @return char*   The new string with `c` appended, or NULL on error.
+ */
 char	*ft_add_char(char *temp, char c, char next_c)
 {
 	int		len_temp;
@@ -94,6 +125,16 @@ char	*ft_add_char(char *temp, char c, char next_c)
 	return (number);
 }
 
+/**
+ * @brief Parses integers from a string and adds them to the stack.
+ *
+ * Splits the input string by whitespace, builds valid integer strings,
+ * and stores them using ft_int_to_stack.
+ *
+ * @param str   The input string to parse.
+ * @param list  The list to store integers into.
+ * @return int  0 on success, 1 on failure.
+ */
 int	ft_return_int(char *str, t_list *list)
 {
 	int		i;
@@ -122,6 +163,17 @@ int	ft_return_int(char *str, t_list *list)
 	return (0);
 }
 
+/**
+ * @brief Parses all arguments and populates the stack with valid integers.
+ *
+ * Iterates over argv starting from index 1, passing each to ft_return_int
+ * for processing. Frees list on error.
+ *
+ * @param argc  Argument count.
+ * @param argv  Argument vector.
+ * @param list  The list to populate.
+ * @return int  0 on success, 1 on failure.
+ */
 int	ft_parse_and_stack(int argc, char **argv, t_list *list)
 {
 	int		i;
