@@ -12,6 +12,18 @@
 
 #include "ft_push_swap_bonus.h"
 
+/**
+ * @brief Checks if a list is ordered in ascending order.
+ *
+ * This function verifies if the list `list->first_node_a` is sorted in
+ * ascending order by comparing the content of each node with the next one.
+ * It also returns early if `first_node_b` is not NULL.
+ *
+ * @param list Pointer to the t_list structure containing the nodes.
+ * 
+ * @return int Returns 0 if the list is sorted and `first_node_b` is NULL.
+ *             Returns 1 otherwise (if unsorted or `first_node_b` is not NULL).
+ */
 int	ft_ordered_list(t_list *list)
 {
 	if (list->first_node_b != NULL)
